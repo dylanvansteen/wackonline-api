@@ -1,0 +1,34 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "51ed589fb37fe6bf9691ed67a2a158dd4e306685c6c990b3b6b42fad86fd1772b44379ba9a259c8bb4033edff858ac8cfd066ffbd8859014eedf03d5fa6d8a69142b5c795399c9ed3e8cc506600d926c7cf93943ec3f0e92f2069e46b9c987a4967da1075fe4df7c7e964302a07492808ba2d37c2e8542c5f3151b19baae31619c8eda090de5ad06aba0123facd170dac2ad80d80c5ca4081835896172335f6953e99f298dc416ca28a96c259da3106cd0e5b98c664ade9757747d1718b7c068736db43dfca010be07627de4272b3af0adbd56f2ac286df5d0849a9e7e3bfc93eb3ad82d737d5859aa635b6032cb274972a2cbc56cea1afe8d3777b52df66189",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "http://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "mongodb": "mongodb://admin:Welkom01@ds145275.mlab.com:45275/booking"
+}
