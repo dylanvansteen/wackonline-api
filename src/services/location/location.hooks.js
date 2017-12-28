@@ -1,23 +1,23 @@
 const { authenticate } = require('feathers-authentication').hooks;
-const { enrichUser, filterForCurrentUser } = require('../../hooks/enrich.with.userid');
+const { enrichUserId, enrichUser, filterForCurrentUser } = require('../../hooks/enrich.with.userid');
 
 module.exports = {
   before: {
     all: [authenticate('jwt')],
     find: [filterForCurrentUser()],
     get: [filterForCurrentUser()],
-    create: [enrichUser()],
-    update: [],
+    create: [enrichUserId()],
+    update: [enrichUserId()],
     patch: [],
     remove: []
   },
 
   after: {
     all: [],
-    find: [],
-    get: [],
-    create: [],
-    update: [],
+    find: [enrichUser()],
+    get: [enrichUser()],
+    create: [enrichUser()],
+    update: [enrichUser()],
     patch: [],
     remove: []
   },

@@ -34,7 +34,6 @@ describe('\'location\' service', () => {
           number: faker.company.bs(),
           type: faker.random.arrayElement(['Auction', 'Customer', 'Supplier', 'Carrier']),
           GLN: faker.finance.iban(),
-          user: '5a00bcd58685714cb0ee4d04'
         });
       }
       assert.ok(locations.length == totalLocations, 'locations are not added');
