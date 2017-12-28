@@ -8,7 +8,7 @@ module.exports = function (app) {
   const location = new Schema({
     name: { type: String, required: true },
     number: { type: String, required: true },
-    type: { type: Number, required: true },
+    type: { type: String, required: true, enum: ['Auction', 'Customer', 'Supplier', 'Carrier'], default: 'Customer' },
     GLN: { type: String },
     telephone: { type: String },
     emailaddress: { type: String },
