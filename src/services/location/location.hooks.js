@@ -1,5 +1,5 @@
 const { authenticate } = require('feathers-authentication').hooks;
-const { enrichUserId, enrichUser, filterForCurrentUser } = require('../../hooks/enrich.with.userid');
+const { enrichUserId, enrichUser, filterForCurrentUser } = require('../../hooks/user');
 
 module.exports = {
   before: {
